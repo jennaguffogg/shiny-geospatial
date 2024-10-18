@@ -1,0 +1,22 @@
+{
+    "name": "Shiny geospatial testbed",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-renderers",
+                "ms-toolsai.jupyter-keymap",
+                "ms-azuretools.vscode-docker"]
+        }
+    },
+    "remoteUser": "vscode",
+    "postCreateCommand": "uvicorn titiler.application.main:app --reload"
+}
